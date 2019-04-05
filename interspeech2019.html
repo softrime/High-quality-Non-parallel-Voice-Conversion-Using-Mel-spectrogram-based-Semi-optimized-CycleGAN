@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- css -->
+    <link rel="stylesheet" href="static/css/bootstrap.css">
+    <link rel="stylesheet" href="static/css/my.css">
+
+    <title>High-quality Non-parallel Voice Conversion Using Mel-spectrogram based Semi-optimized CycleGAN</title>
+</head>
+<body>
+    
+    <div class="jumbotron">
+        <div class="container">
+                <div class="row">
+                    <div class="clo-md-12 text-center">
+                        <h1>Audio Samples<h1>
+                        <h2>High-quality Non-parallel Voice Conversion Using Mel-spectrogram based Semi-optimized CycleGAN<h2>
+                        <div>
+                            <p></p>
+                            <div class="row">
+                                <div class="col-md-offset-2 col-md-2"><p><a href="https://softrime.github.io/">Songze Wu</a></p></div>
+                                <div class="col-md-2"><p><a href="https://speechlab.sjtu.edu.cn/members/bo-chen">Bo Chen</a></p></div>
+                                <div class="col-md-2"><p><a href="https://speechlab.sjtu.edu.cn/members/kuan-chen">Kuan Chen</a></p></div>
+                                <div class="col-md-2"><p><a href="https://speechlab.sjtu.edu.cn/members/kai_yu">Kai Yu</a></p></div>
+                            </div>
+                            <div class="text-info">
+                                    <p>Shanghai Jiao Tong University, Shanghai, China</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Paper</h2>
+                <p> Songze Wu, Bo Chen, Chen Kuan, Kai Yu, <strong>High-quality Non-parallel Voice Conversion Using Mel-spectrogram based Semi-optimized CycleGAN.</strong></p> 
+            </div>
+        </div>
+        <!--<hr>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Introduction</h2>
+                <div>
+                    <p> In this paper, an enhanced WaveNet <strong>[2]</strong> model based on spectrogram is proposed to further improve voice conversion performance. 
+                        Here, mel-frequency spectrogram is converted from source speaker to target speaker using a LSTM-RNN based frame-to-frame feature mapping.
+                        The Mel-spectrogram based voice conversion can achieve significant improvement in speaker similarity and inherent F<sub>0</sub> conversion.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>VC Architecture</h2>
+                <div>
+                    <p>We propose a very simple architecture to convert speechwaveform  with  Mel-spectrograms  as  shown  in  Fig.1</p>
+                    <figure>
+                        <div class="text-center">
+                            <img src="static/img/vc_process.png" alt="" width="600px">
+                        </div>
+                        <figcaption class="text-center">Figure 1: Architectures of Voice Conversion systems with WaveNet vocoder.</figcaption>
+                    </figure>
+                    <p></p>
+                    <p> The speech  waveform  is  only  analyzed  into  Mel-spectrograms.Then  the  mel-sepctograms  are  
+                        converted  frame-by-frame  following the architecture in Fig.2</p>
+                    <figure>
+                        <div class="text-center">
+                            <img src="static/img/vc.png" alt="" width="600px">
+                        </div> 
+                        <figcaption class="text-center">Figure 2: BLSTM frame to frame voice conversion.</figcaption>
+                    </figure>
+                    <p></p>
+                    <p>Compared to the conventional Mcep-based voice conversion,F<sub>0</sub> is not necessary to be converted explicitly as a separate 
+                        feature stream.  It has been ad-dressed in <strong>[3]</strong> that F<sub>0</sub> and duration patterns may be parame-terized to properly 
+                        handle their supra-segmental characteristics,which are not well converted within the frame-wise conversion process.</p>
+                </div>
+                <hr>
+                <h2>WaveNet Vocoder Architecture</h2>
+                <p>The Mel-spectrogram based WaveNet follows the architecture in Tacotron 2 <strong>[1]</strong>, 
+                    which can produce high quality speechwaveform in end-to-end text-to-speech task.  
+                    The architecture of conditional WaveNet is shown in Fig.3. <strong>[4]</strong></p>
+                <div>
+                    <figure>
+                        <div class="text-center">
+                            <img src="static/img/wavenet.png" alt="" width="600px">
+                        </div>
+                        <figcaption class="text-center">Figure 3: Architecture of Conditional WaveNet Vocoder.</figcaption>
+                    </figure>
+                </div>
+                
+                <hr>
+                <h2>Speech Samples</h2>
+                <p>We evaluated our method using <a href="http://festvox.org/cmu_arctic/">CMU ARCTIC Databases</a>.</p>
+                <p><strong>Please open this using browser: Apple Safari, Google Chrome, or Mozilla Firefox !</strong></p>
+            </div>
+        </div>-->
+    </div>
+    <hr>
+    <h3 class="text-center">bdl (male) → slt (fmale)</h3>
+    <div class="container-fluid">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>source audio</th>
+                    <th>target audio</th>
+                    <th>Mcep+STARIGHT</th>
+                    <th>Mcep+WaveNet</th>
+                    <th>Msp+WaveNet</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>sample1</td>
+                    <td><audio src="static/wavs/origin/bdl/cmu_us_arctic_bdl_a0026.wav" controls></audio></td>
+                    <td><audio src="static/wavs/origin/slt/cmu_us_arctic_slt_a0026.wav" controls></audio></td>
+                    <td><audio src="static/wavs/staright/bdl_slt/a0026.wav" controls></audio></td>
+                    <td><audio src="static/wavs/mcep_wavenet/bdl_slt/a0026.wav" controls></audio></td>
+                    <td><audio src="static/wavs/msp_wavenet/bdl_slt/pre_cmu_us_arctic_slt_a0026.wav" controls></audio></td>
+                </tr>
+                <tr>
+                    <td>sample2</td>
+                    <td><audio src="static/wavs/origin/bdl/cmu_us_arctic_bdl_a0089.wav" controls></audio></td>
+                    <td><audio src="static/wavs/origin/slt/cmu_us_arctic_slt_a0089.wav" controls></audio></td>
+                    <td><audio src="static/wavs/staright/bdl_slt/a0089.wav" controls></audio></td>
+                    <td><audio src="static/wavs/mcep_wavenet/bdl_slt/a0089.wav" controls></audio></td>
+                    <td><audio src="static/wavs/msp_wavenet/bdl_slt/pre_cmu_us_arctic_slt_a0089.wav" controls></audio></td>
+                </tr>
+                <tr>
+                    <td>sample3</td>
+                    <td><audio src="static/wavs/origin/bdl/cmu_us_arctic_bdl_b0219.wav" controls></audio></td>
+                    <td><audio src="static/wavs/origin/slt/cmu_us_arctic_slt_b0219.wav" controls></audio></td>
+                    <td><audio src="static/wavs/staright/bdl_slt/b0219.wav" controls></audio></td>
+                    <td><audio src="static/wavs/mcep_wavenet/bdl_slt/b0219.wav" controls></audio></td>
+                    <td><audio src="static/wavs/msp_wavenet/bdl_slt/pre_cmu_us_arctic_slt_b0219.wav" controls></audio></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <hr>
+    <h3 class="text-center">clb (fmale) → slt (fmale)</h3>
+    <div class="container-fluid">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>source audio</th>
+                    <th>target audio</th>
+                    <th>Mcep+STARIGHT</th>
+                    <th>Mcep+WaveNet</th>
+                    <th>Msp+WaveNet</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>sample1</td>
+                    <td><audio src="static/wavs/origin/clb/cmu_us_arctic_clb_a0026.wav" controls></audio></td>
+                    <td><audio src="static/wavs/origin/slt/cmu_us_arctic_slt_a0026.wav" controls></audio></td>
+                    <td><audio src="static/wavs/staright/clb_slt/a0026.wav" controls></audio></td>
+                    <td><audio src="static/wavs/mcep_wavenet/clb_slt/a0026.wav" controls></audio></td>
+                    <td><audio src="static/wavs/msp_wavenet/clb_slt/pre_cmu_us_arctic_slt_a0026.wav" controls></audio></td>
+                </tr>
+                <tr>
+                    <td>sample2</td>
+                    <td><audio src="static/wavs/origin/clb/cmu_us_arctic_clb_a0089.wav" controls></audio></td>
+                    <td><audio src="static/wavs/origin/slt/cmu_us_arctic_slt_a0089.wav" controls></audio></td>
+                    <td><audio src="static/wavs/staright/clb_slt/a0089.wav" controls></audio></td>
+                    <td><audio src="static/wavs/mcep_wavenet/clb_slt/a0089.wav" controls></audio></td>
+                    <td><audio src="static/wavs/msp_wavenet/clb_slt/pre_cmu_us_arctic_slt_a0089.wav" controls></audio></td>
+                </tr>
+                <tr>
+                    <td>sample3</td>
+                    <td><audio src="static/wavs/origin/clb/cmu_us_arctic_clb_b0219.wav" controls></audio></td>
+                    <td><audio src="static/wavs/origin/slt/cmu_us_arctic_slt_b0219.wav" controls></audio></td>
+                    <td><audio src="static/wavs/staright/clb_slt/b0219.wav" controls></audio></td>
+                    <td><audio src="static/wavs/mcep_wavenet/clb_slt/b0219.wav" controls></audio></td>
+                    <td><audio src="static/wavs/msp_wavenet/clb_slt/pre_cmu_us_arctic_slt_b0219.wav" controls></audio></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <hr>
+    <h3 class="text-center">clb (fmale) → rms (male)</h3>
+    <div class="container-fluid">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>source audio</th>
+                    <th>target audio</th>
+                    <th>Mcep+STARIGHT</th>
+                    <th>Mcep+WaveNet</th>
+                    <th>Msp+WaveNet</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>sample1</td>
+                    <td><audio src="static/wavs/origin/clb/cmu_us_arctic_clb_a0026.wav" controls></audio></td>
+                    <td><audio src="static/wavs/origin/rms/cmu_us_arctic_rms_a0026.wav" controls></audio></td>
+                    <td><audio src="static/wavs/staright/clb_rms/a0026.wav" controls></audio></td>
+                    <td><audio src="static/wavs/mcep_wavenet/clb_rms/a0026.wav" controls></audio></td>
+                    <td><audio src="static/wavs/msp_wavenet/clb_rms/pre_cmu_us_arctic_rms_a0026.wav" controls></audio></td>
+                </tr>
+                <tr>
+                    <td>sample2</td>
+                    <td><audio src="static/wavs/origin/clb/cmu_us_arctic_clb_a0089.wav" controls></audio></td>
+                    <td><audio src="static/wavs/origin/rms/cmu_us_arctic_rms_a0089.wav" controls></audio></td>
+                    <td><audio src="static/wavs/staright/clb_rms/a0089.wav" controls></audio></td>
+                    <td><audio src="static/wavs/mcep_wavenet/clb_rms/a0089.wav" controls></audio></td>
+                    <td><audio src="static/wavs/msp_wavenet/clb_rms/pre_cmu_us_arctic_rms_a0089.wav" controls></audio></td>
+                </tr>
+                <tr>
+                    <td>sample3</td>
+                    <td><audio src="static/wavs/origin/clb/cmu_us_arctic_clb_b0219.wav" controls></audio></td>
+                    <td><audio src="static/wavs/origin/rms/cmu_us_arctic_rms_b0219.wav" controls></audio></td>
+                    <td><audio src="static/wavs/staright/clb_rms/b0219.wav" controls></audio></td>
+                    <td><audio src="static/wavs/mcep_wavenet/clb_rms/b0219.wav" controls></audio></td>
+                    <td><audio src="static/wavs/msp_wavenet/clb_rms/pre_cmu_us_arctic_rms_b0219.wav" controls></audio></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <hr>
+    <h3 class="text-center">bdl (male) → rms (male)</h3>
+    <div class="container-fluid">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>source audio</th>
+                    <th>target audio</th>
+                    <th>Mcep+STARIGHT</th>
+                    <th>Mcep+WaveNet</th>
+                    <th>Msp+WaveNet</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>sample1</td>
+                    <td><audio src="static/wavs/origin/bdl/cmu_us_arctic_bdl_a0026.wav" controls></audio></td>
+                    <td><audio src="static/wavs/origin/rms/cmu_us_arctic_rms_a0026.wav" controls></audio></td>
+                    <td><audio src="static/wavs/staright/bdl_rms/a0026.wav" controls></audio></td>
+                    <td><audio src="static/wavs/mcep_wavenet/bdl_rms/a0026.wav" controls></audio></td>
+                    <td><audio src="static/wavs/msp_wavenet/bdl_rms/pre_cmu_us_arctic_rms_a0026.wav" controls></audio></td>
+                </tr>
+                <tr>
+                    <td>sample2</td>
+                    <td><audio src="static/wavs/origin/bdl/cmu_us_arctic_bdl_a0089.wav" controls></audio></td>
+                    <td><audio src="static/wavs/origin/rms/cmu_us_arctic_rms_a0089.wav" controls></audio></td>
+                    <td><audio src="static/wavs/staright/bdl_rms/a0089.wav" controls></audio></td>
+                    <td><audio src="static/wavs/mcep_wavenet/bdl_rms/a0089.wav" controls></audio></td>
+                    <td><audio src="static/wavs/msp_wavenet/bdl_rms/pre_cmu_us_arctic_rms_a0089.wav" controls></audio></td>
+                </tr>
+                <tr>
+                    <td>sample3</td>
+                    <td><audio src="static/wavs/origin/bdl/cmu_us_arctic_bdl_b0219.wav" controls></audio></td>
+                    <td><audio src="static/wavs/origin/rms/cmu_us_arctic_rms_b0219.wav" controls></audio></td>
+                    <td><audio src="static/wavs/staright/bdl_rms/b0219.wav" controls></audio></td>
+                    <td><audio src="static/wavs/mcep_wavenet/bdl_rms/b0219.wav" controls></audio></td>
+                    <td><audio src="static/wavs/msp_wavenet/bdl_rms/pre_cmu_us_arctic_rms_b0219.wav" controls></audio></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <hr>
+    <!--<div class="container">
+        <h2>References</h2>
+        <p><strong>[1]</strong> Shen J, Pang R, Weiss R J, et al. Natural TTS Synthesis by Conditioning WaveNet on Mel Spectrogram Predictions[J]. arXiv preprint arXiv:1712.05884, 2017.</p>
+        <p><strong>[2]</strong> Van Den Oord A, Dieleman S, Zen H, et al. Wavenet: A generative model for raw audio[J]. arXiv preprint arXiv:1609.03499, 2016.</p>
+        <p><strong>[3]</strong> Toda T, Chen L H, Saito D, et al. The Voice Conversion Challenge 2016[C]//INTERSPEECH. 2016: 1632-1636.</p>
+        <p><strong>[4]</strong> Tamamori A, Hayashi T, Kobayashi K, et al. Speaker-dependent WaveNet vocoder[C]//Proceedings of Interspeech. 2017: 1118-1122.</p>
+    </div>
+    <hr>
+    <footer class="footer">
+        <p class="text-center">
+            <strong>High-quality Voice Conversion Using Spectrogram-Based WaveNet Vocoder</strong>
+            <br>
+            <a href="https://speechlab.sjtu.edu.cn/members/kuan-chen">Kuan Chen </a>| SJTU SpeechLab
+        </p>
+    </footer>-->
+</body>
+</html>
